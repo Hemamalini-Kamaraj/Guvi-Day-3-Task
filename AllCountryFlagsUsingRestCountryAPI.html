@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guvi Task</title>
+    </head>
+    <body>
+        <h1>Day 3 Task</h1>
+        <h2>2. All Country Flags Using RestAPI Countries</h2>
+        <script>
+
+            function handleData(){
+                let data = JSON.parse(this.responseText)
+
+                for(e of data)
+                {
+                    console.log(`Flag - ${e.flag}`)
+                }
+            }
+
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v3.1/all")
+            req.send()
+        </script>
+    </body>
+</html>
